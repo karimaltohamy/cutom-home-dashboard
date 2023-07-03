@@ -21,6 +21,8 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"
     />
+    <!-- Include stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   </head>
   <body>
     <main>
@@ -325,16 +327,14 @@
       </div>
 
       <form action="">
+         <div class="input_url">
+          <label for="">https://modern.home.com/blogs/</label>
+          <input type="text">
+        </div>
         <div class="row">
           <div class="col-12 col-md-6">
             <div class="input_item">
               <label for="">Title</label>
-              <input type="text" placeholder="" />
-            </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="input_item">
-              <label for="">Description</label>
               <input type="text" placeholder="" />
             </div>
           </div>
@@ -365,10 +365,11 @@
         </div>
           </div>
         </div>
-        <div class="input_url">
-          <label for="">https://modern.home.com/blogs/</label>
-          <input type="text">
-        </div>
+            <div id="editor">
+              <p>Hello World!</p>
+              <p>Some initial <strong>bold</strong> text</p>
+              <p><br></p>
+            </div>
         <button class="btn_add">Add Blog</button>
         </form>
     </div>
@@ -383,6 +384,10 @@
       </div>
 
       <form action="">
+        <div class="input_url">
+          <label for="">https://modern.home.com/blogs/</label>
+          <input type="text" value="Home and Office">
+        </div>
         <div class="row">
           <div class="col-12 col-md-6">
             <div class="input_item">
@@ -390,13 +395,7 @@
               <input type="text" placeholder="" value="The Biggest Contribution Of Home" />
             </div>
           </div>
-          <div class="col-12 col-md-6">
-            <div class="input_item">
-              <label for="">Description</label>
-              <input type="text" placeholder="" value="Morbi volutpat nisi a ligula vestibulum placerat. Suspendisse venenatis
-                    " />
-            </div>
-          </div>
+     
           <div class="col-12 col-md-6">
             <div class="input_item">
               <label for="">Date</label>
@@ -424,10 +423,12 @@
         </div>
           </div>
         </div>
-        <div class="input_url">
-          <label for="">https://modern.home.com/blogs/</label>
-          <input type="text" value="Home and Office">
-        </div>
+        
+          <div id="editor-update">
+              <p>Hello World!</p>
+              <p>Some initial <strong>bold</strong> text</p>
+              <p><br></p>
+            </div>
         <button class="btn_add">Update Blog</button>
         </form>
     </div>
@@ -439,7 +440,17 @@
     <script src="js/boxs-header.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
+        const quill = new Quill('#editor', {
+          theme: 'snow'
+        });
+
+         const quillUpdate = new Quill('#editor-update', {
+          theme: 'snow'
+        });
+
       $(document).ready(function () {
         $("#blogs").DataTable({
           pagingType: "full_numbers",

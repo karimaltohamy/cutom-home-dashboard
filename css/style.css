@@ -811,6 +811,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 10px;
 }
 .popup_add form .input_url label,
 .popup_update form .input_url label {
