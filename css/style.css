@@ -756,6 +756,11 @@
       -ms-flex-align: end;
           align-items: end;
 }
+.popup_add form .error,
+.popup_update form .error {
+  font-size: 13px;
+  color: red;
+}
 .popup_add form .input_item,
 .popup_update form .input_item {
   display: -webkit-box;

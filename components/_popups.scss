@@ -101,6 +101,11 @@ $dark-text: #324664;
       align-items: end;
     }
 
+    .error {
+      font-size: 13px;
+      color: red;
+    }
+
     .input_item {
       display: flex;
       flex-direction: column;
